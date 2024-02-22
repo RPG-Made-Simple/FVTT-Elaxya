@@ -1,0 +1,66 @@
+{
+  "Actor": {
+    "types": ["player"],
+    "player": {
+      "name": "Nome do Jogador",
+      "race": "",
+      "level": 1,
+      "ancestry": "",
+      "information": {
+        "notes": "",
+        "situational": ""
+      },
+      "attributes": {
+        "simple": {
+            "atletismo": false,
+            "resistir": false,
+            "acrobacia": false,
+            "esquivar": false,
+            "furtividade": false,
+            "prestidigitar": false,
+            "vigor": false,
+            "defender": false,
+            "tecnologia": false,
+            "artes": false,
+            "linguas": false,
+            "arcanismo": false,
+            "criaturas": false,
+            "percepcao": false,
+            "medicina": false,
+            "sobreviver": false,
+            "provocar": false,
+            "persuadir": false,
+            "negociar": false,
+            "atuar": false
+        },
+        "complex": {
+          "dirigir": 0,
+          "lutadorderua": 0,
+          "armasdefogo": 0,
+          "hermetica": 0,
+          "resistencia": 0,
+          "artistamarcial": 0,
+          "armasbrancas": 0,
+          "adestraranimal": 0,
+          "ciencias": 0,
+          "jogosdeazar": 0
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "ability"],
+    "item": {
+      "name": "Item",
+      "quantity": 1,
+      "active": true,
+      "description": "",
+      "formula": "1d20"
+    },
+    "ability": {
+      "name": "Habilidade",
+      "cost": 1,
+      "formula": "1d20"
+    }
+  }
+}
