@@ -8,7 +8,6 @@ export class PlayerActorApplication {
 
   pot: number;
   efe: number;
-  con: number;
   abs: number;
   reg: number;
   mov: number;
