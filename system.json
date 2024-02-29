@@ -26,7 +26,7 @@
     {
       "lang": "pt-BR",
       "name": "Portuguese",
-      "path": "./system/pt-BR.json"
+      "path": "./system/lang/pt-BR.json"
     }
   ],
   "socket": false,

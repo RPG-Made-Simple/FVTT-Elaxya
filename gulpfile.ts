@@ -16,10 +16,14 @@ const buffer = require('vinyl-buffer');
 const scriptSource = './src'
 const styleSource = './styles';
 const hbsSource = './templates';
-
 const langSource = './lang';
+const fontsSource = './fonts';
 
 const packageDir = './system';
+const hbsDir = packageDir.concat('/templates');
+const langDir = packageDir.concat('/lang');
+const fontsDir = packageDir.concat('/fonts');
+
 
 function clean() {
   // Clean package dir
@@ -50,7 +54,7 @@ function tsBundle() {
     debug: true,
     entries: ['src/system.ts'],
   })
-    .plugin(tsify)
+    .plugin(tsify, { target: 'es6' })
     .bundle()
     .pipe(source('system.min.js'))
     .pipe(buffer())
@@ -62,19 +66,24 @@ function tsBundle() {
 function langBundle() {
   return src(langSource.concat('/*.json'))
     .pipe(jsonMinify())
-    .pipe(dest(packageDir));
+    .pipe(dest(langDir));
 }
 
 function hbsBundle() {
   return src(hbsSource.concat('/**/*.hbs'))
     .pipe(rename({ dirname: '' }))
-    .pipe(dest(packageDir));
+    .pipe(dest(hbsDir));
 }
 
 function systemJsonBundle() {
   return src('./system.json')
     .pipe(jsonMinify())
     .pipe(dest(packageDir));
+}
+
+function fontBundle() {
+  return src([fontsSource.concat('/**/*.ttf'), fontsSource.concat('/**/*.txt')])
+    .pipe(dest(fontsDir));
 }
 
 function publish() {
@@ -89,6 +98,7 @@ const buildTask = process.env.NODE_ENV === 'production' ?
       langBundle,
       hbsBundle,
       systemJsonBundle,
+      fontBundle,
     ),
     publish,
   ) :
@@ -100,6 +110,7 @@ const buildTask = process.env.NODE_ENV === 'production' ?
       langBundle,
       hbsBundle,
       systemJsonBundle,
+      fontBundle,
     ),
   );
 

@@ -1,0 +1,61 @@
+{{log this}}
+<form class="elaxya sheet">
+  <div class="content">
+    <div class="common">
+      <div class="image">
+        <img src="{{data.img}}">
+      </div>
+      <div class="info">
+        <div class="info-entry name">
+          <span>{{localize 'elaxya.sheet.actor.character.info.name.label'}}</span>
+          <input type="text" value="{{data.name}}">
+        </div>
+        <div class="info-entry race">
+          <span>{{localize 'elaxya.sheet.actor.character.info.race.label'}}</span>
+          <input type="text" value="{{system.race}}">
+        </div>
+        <div class="info-entry level">
+          <span>{{localize 'elaxya.sheet.actor.character.info.level.label'}}</span>
+          <input
+            type="number"
+            value="{{system.level}}"
+            min="0"
+            pattern="[0-9]+"
+          />
+        </div>
+        <div class="info-entry ancestry">
+          <span>{{localize 'elaxya.sheet.actor.character.info.ancestry.label'}}</span>
+          <input type="text" value="{{system.ancestry}}">
+        </div>
+        <div class="info-entry health">
+          <span>{{localize 'elaxya.sheet.actor.character.info.health.label'}}</span>
+          <input
+            type="number"
+            value="{{system.health.max}}"
+            max="{{system.health.max}}"
+            min="0"
+            pattern="[0-9]+"
+          />
+        </div>
+        <div class="info-entry energy">
+          <span>{{localize 'elaxya.sheet.actor.character.info.energy.label'}}</span>
+          <input
+            type="number"
+            value="{{system.energy.value}}"
+            max="{{system.energy.max}}"
+            min="0"
+            pattern="[0-9]+"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="bio">
+      <div class="notes">
+        THESE ARE EXAMPLE NOTES
+      </div>
+      <div class="situational">
+        THESE ARE EXAMPLE SITUATIONAL
+      </div>
+    </div>
+  </div>
+</form>

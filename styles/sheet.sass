@@ -1,0 +1,143 @@
+@use 'colors'
+@use 'fonts'
+
+@mixin block-container()
+  background: unset !important
+  background: colors.$color-background !important
+  border-radius: 0px
+  border: 1px solid colors.$color-highlight
+  filter: drop-shadow(0 0 0.2rem rgba(0, 0, 0, 0.5))
+
+@mixin title-text()
+  font-family: 'Playfair Display'
+  font-weight: 600
+  color: colors.$color-text
+  font-size: 13pt
+
+@mixin category-text()
+  font-family: 'Playfair Display'
+  font-weight: 500
+  color: colors.$color-text
+  font-size: 12pt
+
+@mixin common-text()
+  font-family: 'Noto Sans'
+  font-weight: 400
+  color: colors.$color-text
+  font-size: 11pt
+
+@mixin title-container()
+  @include block-container()
+  @include title-text()
+  padding: 5px
+
+@mixin category-container()
+  @include block-container()
+  @include category-text()
+  padding: 5px
+
+.elaxya
+  &.sheet
+    .content
+      width: 100%
+      height: 100%
+      padding: 15px
+      display: flex
+      flex-direction: column
+      justify-content: center
+
+      .common
+        .image
+          float: left
+          width: 250px
+          height: 250px
+          img
+            width: 100%
+            height: 100%
+            border: none !important
+            transition: 100ms all ease-in-out
+
+        .info
+          display: grid
+          grid-template-columns: 1fr 1fr
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+          gap: 10px 10px
+
+          .info-entry
+            @include block-container()
+            padding: 5px
+
+            span
+              @include category-text()
+
+            input
+              @include common-text()
+              background: unset !important
+              border: none !important
+              --color-shadow-primary: #00000000
+
+            &.name
+              grid-column: span 2
+
+            &.race
+
+            &.level
+
+            &.ancestry
+              grid-column: span 2
+
+            &.health
+
+            &.energy
+
+          .name
+
+            .label
+            .input
+
+          .race
+            @include block-container()
+            .label
+            .input
+
+          .level
+            @include block-container()
+            .label
+            .input
+
+          .acenstry
+            @include block-container()
+            .label
+            .input
+
+      .bio
+
+        .notes
+          @include category-container()
+
+        .situational
+          @include category-container()
+
+
+
+.elaxya-window
+  @include block-container()
+  .window-header
+    justify-content: space-between
+    align-items: center
+    max-height: 45px
+    min-height: 45px
+    height: 50px
+    padding-left: 15px
+    padding-right: 15px
+    border-bottom: none !important
+
+  .window-content
+    background: unset !important
+    border-top: none !important
+    padding: 0px !important
+
+  .window-resizable-handle
+    background: unset !important
+    border: none !important
+    cursor: pointer

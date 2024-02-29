@@ -1,5 +1,31 @@
 {
   "elaxya": {
-
+    "sheet": {
+      "actor": {
+        "character": {
+          "label": "Ficha de Personagem",
+          "info": {
+            "name": {
+              "label": "Nome"
+            },
+            "race": {
+              "label": "Raça"
+            },
+            "level": {
+              "label": "Nível"
+            },
+            "ancestry": {
+              "label": "Descendência"
+            },
+            "health": {
+              "label": "Vida"
+            },
+            "energy": {
+              "label": "Energia"
+            }
+          }
+        }
+      }
+    }
   }
 }

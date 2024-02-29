@@ -1,8 +1,7 @@
 {
   "Actor": {
-    "types": ["player"],
-    "player": {
-      "name": "Nome do Jogador",
+    "types": ["character"],
+    "character": {
       "race": "",
       "level": 1,
       "ancestry": "",
@@ -10,7 +9,57 @@
         "notes": "",
         "situational": ""
       },
+      "speed": {
+        "value": 0
+      },
+      "health": {
+        "value": 0,
+        "max": 0,
+        "temp": 0
+      },
+      "energy": {
+        "value": 0,
+        "max": 0,
+        "temp": 0
+      },
       "attributes": {
+        "level": {
+          "value": 0
+        }
+      },
+      "abilities": {
+        "str": {
+          "value": 0
+        },
+        "dex": {
+          "value": 0
+        },
+        "con": {
+          "value": 0
+        },
+        "int": {
+          "value": 0
+        },
+        "wis": {
+          "value": 0
+        },
+        "cha": {
+          "value": 0
+        },
+        "pot": {
+          "value": 0
+        },
+        "eff": {
+          "value": 0
+        },
+        "abs": {
+          "value": 0
+        },
+        "reg": {
+          "value": 0
+        }
+      },
+      "skills": {
         "simple": {
             "atletismo": false,
             "resistir": false,
